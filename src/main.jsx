@@ -4,6 +4,7 @@ import App from './App.jsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Create from './pages/Create.jsx'
+import Header from './components/Header.jsx'
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: "/create",
     element: <Create />
+  },
+  {
+    path:"/header",
+    element:<Header/>
   }
 ]);
 

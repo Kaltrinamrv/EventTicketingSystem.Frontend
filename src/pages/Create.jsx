@@ -1,6 +1,8 @@
+import Header from "../components/Header"
 export default function Create(){
     return (
         <>
+        <Header/>
             <h1 className="text-blue-300">Where Event Organizers Grow </h1>
             <p className="text-center text-lg mt-4">Sell tickets, promote events, engage sponsors, and discover events.</p>
             <div className="flex justify-center mt-8">
