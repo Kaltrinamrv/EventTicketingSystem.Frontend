@@ -42,6 +42,42 @@ h2 {
   padding-top: 20%;
 
 }
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+  max-width: 7xl;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f209ea; 
+  padding: 2em;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #eceff5;
+  backdrop-filter: blur(100px);
+}
+.button-container {
+  display: flex;
+}
+
+.header-button {
+  background-color: transparent;
+  border: none;
+  
+  color: #ffeffb;
+  font-size: 14px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.header-button:hover {
+  border-color: #f200ff;
+}
 
 button {
   border-radius: 8px;
