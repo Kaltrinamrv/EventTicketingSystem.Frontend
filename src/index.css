@@ -1,112 +1,104 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #060606;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
 }
 
-a {
-  font-weight: 500;
-  color: #ffffff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #f200ff;
+html {
+  height: 100%;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  background-color: #121212;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-  font-family: "Inknut Antiqua";
-}
-h2 {
-  font-size: 3em;
-  line-height: 1.1;
-  font-family: "Inknut Antiqua";
-  padding-top: 20%;
-
-}
-.header {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  margin: 0 auto;
-  display: flex;
-  width: 100%;
-  max-width: 7xl;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid #f209ea; 
-  padding: 2em;
-  font-family: sans-serif;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #eceff5;
-  backdrop-filter: blur(100px);
-}
-.button-container {
-  display: flex;
+p {
+  line-height: 1.6;
 }
 
-.header-button {
-  background-color: transparent;
-  border: none;
-  
-  color: #ffeffb;
-  font-size: 14px;
-  margin-left: 10px;
-  cursor: pointer;
-}
-
-.header-button:hover {
-  border-color: #f200ff;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #f200ff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
+@layer base {
   :root {
-    color: #060606;
-    background-color: #060606;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --brand-primary: 221, 42%, 31%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 0 0% 7%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 299, 100%, 30%;
+    --secondary-foreground: 0 0% 15%;
+
+    --muted: 47 89% 52%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 47 89% 52%;
+    --accent-foreground: 0 0% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --text-primary: #002A41
   }
-  a:hover {
-    color: #f200ff;
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 0 0% 15%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
   }
-  button {
-    background-color: #f200ff;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
   }
 }
