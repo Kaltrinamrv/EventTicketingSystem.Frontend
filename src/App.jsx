@@ -3,23 +3,28 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Header from './components/UI/Header'
 import Create from './pages/Create';
 import Home from './pages/Home';
+import SearchPage from './pages/SearchPage';
 
 function App() {
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />
-  },
-  {
-    path: "/create",
-    element: <Create />
-  },
-  {
-    path:"/header",
-    element:<Header/>
-  }
-]);
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />
+    },
+    {
+      path: "/SearchPage",
+      element: <SearchPage />
+    },
+    {
+      path: "/create",
+      element: <Create />
+    },
+    {
+      path: "/header",
+      element: <Header />
+    }
+  ]);
 
   return (
     <>
