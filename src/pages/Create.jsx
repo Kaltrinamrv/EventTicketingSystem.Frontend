@@ -1,20 +1,73 @@
 import Header from "../components/UI/Header"
-export default function Create(){
-    return (
-        <>
-        <Header/>
-            <h1 className="text-blue-300">Where Event Organizers Grow </h1>
-            <p className="text-center text-lg mt-4">Sell tickets, promote events, engage sponsors, and discover events.</p>
-            <div className="flex justify-center mt-8">
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-          Create your event
-        </button>
-      </div>
+import HeroSection from "../components/Create/HeroSection"
+import InfoCard from "../components/Create/InfoCard";
+import Footer from "../components/UI/Footer"
+import AboutCard from "../components/Create/AboutCard";
 
-      <div className="additional-text">
-          <h2>Event hosting made easy</h2>
-          <p>Easily create and manage events on a platform that attendees love and trust.</p>
-        </div>
-        </>
-    )
-}
+const Create = () => {
+    const EV_CARDS = [
+        {
+            title: "Event Ticketing",
+            description: `Sell more tickets with customizable event pages and a seamless checkout experience for attendees on a trusted platform`,
+            
+        },
+        {
+            title: "Reporting & Analytics",
+            description: `There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.`,
+            
+        },
+        {
+            
+            title: "Organizer App",
+            description: `There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.`,
+            
+        },
+    ]
+    const PURPLE_CARDS = [
+       {
+        title: "test",
+        description: 'test',
+
+       },
+     
+    ]
+
+
+
+
+
+
+
+    return (
+            <main>
+                <HeroSection />
+                <div className="w-full bg-primary">
+                    <div className="max-w-full  mt-12 mx-6 py-2">
+                        <h1 className="text-white text-3xl font-titles my-[3rem]">Event hosting made easy</h1>
+                        <p className="text-white text-xl">Easily create and manage events on a platform that attendees <br/> love and trust</p>
+                    </div>
+                    <div className="flex md:px-[150px] xl:px-[300px] w-full bg-primary justify-start items-start gap-8 py-6 flex-col">
+                    {EV_CARDS.map((item) => {
+                        return <InfoCard key={item.id} item={item} />;
+                    })}
+                     </div>
+                     <div className="max-w-full  mt-12 mx-6 py-2">
+                        <h1 className="text-white text-2xl font-titles my-[3rem]">All the tools you need to host an event & grow your community</h1>
+                      </div>
+                      <div className="flex md:px-[150px] xl:px-[300px] ">
+                    {PURPLE_CARDS.map((item) => {
+                        return <AboutCard key={item.id} item={item} />;
+                    })}
+                     </div>
+
+                   
+                </div>
+    
+                <Footer />
+            </main>
+        
+
+    );
+};
+
+export default Create;
