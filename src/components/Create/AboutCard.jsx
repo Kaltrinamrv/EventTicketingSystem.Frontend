@@ -1,13 +1,16 @@
 const AboutCard = (props) => {
-    return (
-      <div className="p-4 max-w-[450px] border">
-        <img src={props.item.image} alt={props.title} />
-        <div className="text-white">
-          <h1 className="text-2xl font-titles my-[1.5rem]">{props.item.title}</h1>
-          <p className="line-clamp-3">{props.item.description}</p>
-        </div>
+  return (
+    <div className="p-6 max-w-xl border purple-card">
+      <div className="text-white">
+        {props.item.titles.map((title, index) => (
+          <div key={index} className="mb-4">
+            <h1 className="text-2xl font-titles mb-2">{title}</h1>
+            <p className="line-clamp-3">{props.item.descriptions[index]}</p>
+          </div>
+        ))}
       </div>
-    );
-  };
-  
-  export default AboutCard;
+    </div>
+  );
+};
+
+export default AboutCard;
