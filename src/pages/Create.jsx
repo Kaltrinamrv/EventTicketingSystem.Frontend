@@ -24,11 +24,22 @@ const Create = () => {
         },
     ]
     const PURPLE_CARDS = [
-       {
-        title: "test",
-        description: 'test',
-
-       },
+        {
+            titles: [
+              "Event Ticketing",
+              "Eventbrite Ads",
+              "Marketing Tools",
+              "Payments"
+            ],
+            descriptions: [
+              "Everything you need to sell tickets for in-person or online events",
+              "Create no-hassle ads that promote your event on Eventbrite",
+              "All the event marketing tools you need in one place",
+              "Easily collect and simplify event payments"
+            ]
+          }
+       
+       
      
     ]
 
@@ -54,7 +65,7 @@ const Create = () => {
                      <div className="max-w-full  mt-12 mx-6 py-2">
                         <h1 className="text-white text-2xl font-titles my-[3rem]">All the tools you need to host an event & grow your community</h1>
                       </div>
-                      <div className="flex md:px-[150px] xl:px-[300px] ">
+                      <div className="w-full ">
                     {PURPLE_CARDS.map((item) => {
                         return <AboutCard key={item.id} item={item} />;
                     })}
