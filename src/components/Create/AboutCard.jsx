@@ -1,6 +1,6 @@
 const AboutCard = (props) => {
   return (
-    <div className="p-6 max-w-xl border purple-card">
+    <div className="p-6 max-w-full border purple-card">
       <div className="text-white">
         {props.item.titles.map((title, index) => (
           <div key={index} className="mb-4">
