@@ -22,6 +22,11 @@ export const navLinks = [
     title: 'Sign Up',
     link: '/contact',
   },
+  {
+    id: 'searchpage',
+    title: 'Search',
+    link: '/SearchPage',
+  },
 ]
 
 
