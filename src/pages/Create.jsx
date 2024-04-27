@@ -3,6 +3,7 @@ import HeroSection from "../components/Create/HeroSection"
 import InfoCard from "../components/Create/InfoCard";
 import Footer from "../components/UI/Footer"
 import AboutCard from "../components/Create/AboutCard";
+import Mockupevent from '../images/Mockupevent.png';
 
 const Create = () => {
     const EV_CARDS = [
@@ -51,6 +52,7 @@ const Create = () => {
 
     return (
             <main>
+               
                 <HeroSection />
                 <div className="w-full bg-primary">
                     <div className="max-w-full  mt-12 mx-6 py-2">
@@ -62,6 +64,10 @@ const Create = () => {
                         return <InfoCard key={item.id} item={item} />;
                     })}
                      </div>
+                     <div>
+                    
+                    <img src={Mockupevent} width={800} height={800} className=" md:px-[150px] xl:px-[600]"/>
+                </div>
                      <div className="max-w-full  mt-12 mx-6 py-2">
                         <h1 className="text-white text-2xl font-titles my-[3rem]">All the tools you need to host an event & grow your community</h1>
                       </div>
@@ -70,9 +76,11 @@ const Create = () => {
                         return <AboutCard key={item.id} item={item} />;
                     })}
                      </div>
+                    
 
                    
                 </div>
+                
     
                 <Footer />
             </main>
