@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react';
 
 export const navLinks = [
   {
@@ -18,23 +18,25 @@ export const navLinks = [
     link: '/about',
   },
   {
-    id: 'log-in',
-    title: 'Log In',
-    link: '/login',
-  },
-  {
     id: 'searchpage',
     title: 'Search',
     link: '/SearchPage',
   },
 ]
 
-
 const Header = () => {
-  const [toggle, setToggle] = useState(false)
+  const [toggle, setToggle] = useState(false);
+  const token = localStorage.getItem('token');
+
+  const handleLogout = () => {
+    // Clear the token from local storage
+    localStorage.removeItem('token');
+    // Redirect the user to the login page or homepage
+    window.location.href = '/login'; // or '/' if you want to redirect to the homepage
+  };
 
   return (
-    <div className="bg-primary w-full overflow-hidden h-[100px] flex justify-center items-center"> {/* Centered content */}
+    <div className="bg-primary w-full overflow-hidden h-[100px] flex justify-center items-center">
       <div className={`sm:px-16 px-6 w-full`}>
         <nav className="w-full flex py-2 justify-between items-center navbar">
           <a href="/" className="flex justify-center gap-3 items-center font-titles">
@@ -43,7 +45,6 @@ const Header = () => {
             </p>
           </a>
 
-          {/* Desktop Navigation */}
           <ul className="list-none sm:flex hidden justify-end items-center flex-1">
             {navLinks.map((nav, index) => (
               <li
@@ -55,6 +56,16 @@ const Header = () => {
                 <a href={nav.link}>{nav.title}</a>
               </li>
             ))}
+            {/* Conditionally render Log Out if token exists, otherwise render Log In */}
+            {token ? (
+              <li className="font-poppins font-normal px-2 py-2 cursor-pointer text-[20px] ml-4 text-white mr-10 hover:text-secondary hover:border-b-secondary hover:border-b-2">
+                <button onClick={handleLogout}>Log Out</button>
+              </li>
+            ) : (
+              <li className="font-poppins font-normal px-2 py-2 cursor-pointer text-[20px] ml-4 text-white mr-10 hover:text-secondary hover:border-b-secondary hover:border-b-2">
+                <a href="/login">Log In</a>
+              </li>
+            )}
           </ul>
 
           <div className="sm:hidden flex flex-1 justify-end items-center">
@@ -65,7 +76,6 @@ const Header = () => {
               {!toggle ? <Menu /> : <X />}
             </div>
 
-            {/* Sidebar */}
             <div
               className={`${!toggle ? 'hidden' : 'flex'
                 } p-6 bg-primary absolute top-20 right-0 mx-4 my-2 min-w-[240px] rounded-xl sidebar`}
@@ -80,6 +90,16 @@ const Header = () => {
                     <a href={nav.link}>{nav.title}</a>
                   </li>
                 ))}
+                {/* Conditionally render Log Out if token exists, otherwise render Log In */}
+                {token ? (
+                  <li className="font-poppins font-medium cursor-pointer text-[20px] ml-4 text-white mb-4">
+                    <button onClick={handleLogout}>Log Out</button>
+                  </li>
+                ) : (
+                  <li className="font-poppins font-medium cursor-pointer text-[20px] ml-4 text-white mb-4">
+                    <a href="/login">Log In</a>
+                  </li>
+                )}
               </ul>
             </div>
           </div>
