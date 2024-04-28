@@ -1,17 +1,20 @@
-// apiConfig.js
+apiConfig.js
 
-// const API_BASE_URL = "https://api.example.com";
-
-// export default API_BASE_URL;
+const apiURL = 'http://localhost:5031';
 
 
 
-//import API_BASE_URL from "./apiConfig"; QETO ME IMPORTU NPAGE
+
+export default apiURL;
+
+// const apiURL = "https://api.example.com";
+
+//import apiURL from "./apiConfig"; QETO ME IMPORTU NPAGE
 
 //FOR EXAMPLE
 // const fetchData = async () => {
 //     try {
-//         const response = await axios.get(`${API_BASE_URL}/data`);
+//         const response = await axios.get(`${apiURL}/data`);
 //         setData(response.data);
 //       } catch (error) {
 //         console.error("Error fetching data: ", error);
