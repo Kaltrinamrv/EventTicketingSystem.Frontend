@@ -81,7 +81,6 @@ const Register = () => {
                         </div>
                     </form>
                 </div>
-                {/* Welcome Message Section */}
                 <div className="hidden sm:flex items-center justify-center w-full sm:w-1/2 relative mt-8">
                     <div className="absolute right-0 top-0 bottom-0  bg-gradient-to-br from-blue-600  to-fuchsia-600 w-full flex items-center justify-center">
                         <div className="z-10 text-white text-center p-8">

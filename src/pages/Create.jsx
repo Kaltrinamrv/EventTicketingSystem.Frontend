@@ -6,10 +6,6 @@ import AboutCard from "../components/Create/AboutCard";
 import Mockupevent from "../images/Mockupevent.png";
 //import axios from "axios";
 
-
-
-
-
 const Create = () => {
   const EV_CARDS = [
     {
