@@ -2,6 +2,7 @@ import EventCard from "../components/Home/EventCard";
 import HeroSection from "../components/Home/HeroSection";
 import Footer from "../components/UI/Footer";
 
+
 const Home = () => {
     const DUMMY_CARDS = [
         {
