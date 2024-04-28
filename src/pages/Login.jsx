@@ -8,7 +8,7 @@ const Login = () => {
     const [errorMessage, setErrorMessage] = useState("");
 
     const handleLoginSuccess = (token) => {
-        // Store the token in local storage
+        
         localStorage.setItem('token', token);
         window.location.href = '/';
     };
@@ -33,7 +33,7 @@ const Login = () => {
     return (
         <main className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col sm:flex-row">
-                {/* Login Section */}
+                
                 <div className="flex flex-col items-center sm:items-start sm:ml-8 mt-8 sm:mt-24 w-full sm:w-1/2">
                     <h1 className="text-white text-3xl font-titles mb-4">Log In</h1>
                     {errorMessage && <p className="text-red-500">{errorMessage}</p>}
@@ -55,7 +55,7 @@ const Login = () => {
                         </div>
                     </div>
                 </div>
-                {/* Welcome Message Section */}
+               
                 <div className="hidden sm:flex items-center justify-center w-full sm:w-1/2 relative mt-8">
                     <div className="absolute right-0 top-0 bottom-0  bg-gradient-to-br from-blue-600  to-fuchsia-600 w-full flex items-center justify-center">
                         <div className="z-10 text-white text-center p-8">
