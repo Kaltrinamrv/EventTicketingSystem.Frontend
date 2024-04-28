@@ -29,10 +29,10 @@ const Register = () => {
                 body: JSON.stringify(formData)
             });
             if (response.ok) {
-                // Redirect to home page after successful registration
+                
                 window.location.href = '/Thankyou';
             } else {
-                // Handle error
+                
                 console.error("Registration failed:", response.statusText);
             }
         } catch (error) {
