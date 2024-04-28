@@ -30,7 +30,7 @@ const Register = () => {
             });
             if (response.ok) {
                 // Redirect to home page after successful registration
-                window.location.href = '/';
+                window.location.href = '/Thankyou';
             } else {
                 // Handle error
                 console.error("Registration failed:", response.statusText);

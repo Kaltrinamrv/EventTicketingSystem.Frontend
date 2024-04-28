@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import SearchPage from './pages/SearchPage';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Thankyou from './pages/Thankyou';
 
 function App() {
 
@@ -26,6 +27,11 @@ function App() {
     {
       path: "/SearchPage",
       element: <SearchPage />
+    },
+    {
+      path: "/Thankyou",
+      element: <Thankyou />
+
     },
     {
       path: "/create",
