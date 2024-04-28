@@ -5,6 +5,7 @@ import Create from './pages/Create';
 import Home from './pages/Home';
 import SearchPage from './pages/SearchPage';
 import Login from './pages/Login';
+import Register from './pages/Register';
 
 function App() {
 
@@ -17,6 +18,10 @@ function App() {
       path: "/login",
       element: <Login />
 
+    },
+    {
+      path: "/register",
+      element: <Register />
     },
     {
       path: "/SearchPage",

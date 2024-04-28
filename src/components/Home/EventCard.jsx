@@ -1,3 +1,4 @@
+
 const EventCard = (props) => {
     return (
       <div className="p-4 max-w-[350px] border rounded-2xl">
