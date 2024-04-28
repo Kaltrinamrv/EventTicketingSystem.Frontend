@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Thankyou from './pages/Thankyou';
 import Event from './pages/Event';
+import Yourevent from './pages/Yourevent';
 
 function App() {
 
@@ -42,6 +43,10 @@ function App() {
       path: "/Thankyou",
       element: <Thankyou />
 
+    },
+    {
+      path: "/Yourevent",
+      element: <Yourevent />
     },
     {
       path: "/create",
