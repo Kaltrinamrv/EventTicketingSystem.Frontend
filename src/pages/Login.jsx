@@ -2,17 +2,15 @@ import React, { useState } from "react";
 import axios from "axios";
 import Footer from "../components/UI/Footer";
 
-
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
 
     const handleLoginSuccess = (token) => {
         // Store the token in local storage
         localStorage.setItem('token', token);
-           
-            window.location.href = '/';
-        
+        window.location.href = '/';
     };
 
     const handleLogin = () => {
@@ -23,11 +21,12 @@ const Login = () => {
 
         axios.post('https://localhost:7161/User/authenticate', requestData)
             .then(response => {
-                const { token} = response.data;
+                const { token } = response.data;
                 handleLoginSuccess(token);
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
+                setErrorMessage("Your email or password is wrong");
             });
     };
 
@@ -37,6 +36,7 @@ const Login = () => {
                 {/* Login Section */}
                 <div className="flex flex-col items-center sm:items-start sm:ml-8 mt-8 sm:mt-24 w-full sm:w-1/2">
                     <h1 className="text-white text-3xl font-titles mb-4">Log In</h1>
+                    {errorMessage && <p className="text-red-500">{errorMessage}</p>}
                     <div className="w-full sm:w-80 border-2 border-[#e70ce3aa] px-4 py-3 mb-6">
                         <input type="text" placeholder="Email Address" className="w-full bg-transparent text-white placeholder-white" value={email} onChange={(e) => setEmail(e.target.value)} />
                     </div>
