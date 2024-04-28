@@ -4,6 +4,7 @@ import Header from './components/UI/Header'
 import Create from './pages/Create';
 import Home from './pages/Home';
 import SearchPage from './pages/SearchPage';
+import Login from './pages/Login';
 
 function App() {
 
@@ -11,6 +12,11 @@ function App() {
     {
       path: "/",
       element: <Home />
+    },
+    {
+      path: "/login",
+      element: <Login />
+
     },
     {
       path: "/SearchPage",

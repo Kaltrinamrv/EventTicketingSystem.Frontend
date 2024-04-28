@@ -48,7 +48,7 @@ const EventSearchPage = () => {
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
                         onKeyPress={handleKeyPress}
-                        placeholder="Enter search query"
+                        placeholder="Enter search query"   //ngjyra [#e70ce3aa]
                         className="border border-gray-300 rounded py-2 px-4 mr-2 focus:outline-none focus:border-purple-500 flex-grow bg-black text-white"
                     />
                     <button
