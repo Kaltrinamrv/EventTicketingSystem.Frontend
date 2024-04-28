@@ -4,6 +4,7 @@ import Header from './components/UI/Header'
 import Create from './pages/Create';
 import Home from './pages/Home';
 import SearchPage from './pages/SearchPage';
+import AccountPage from './pages/AccountPage';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Thankyou from './pages/Thankyou';
@@ -32,6 +33,10 @@ function App() {
     {
       path: "/SearchPage",
       element: <SearchPage />
+    },
+    {
+      path: "/about",
+      element: <AccountPage />
     },
     {
       path: "/Thankyou",
