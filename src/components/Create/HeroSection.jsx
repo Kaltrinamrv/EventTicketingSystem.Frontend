@@ -1,4 +1,5 @@
 import Button from "../UI/Button";
+import { Link } from 'react-router-dom'; 
 
 const HeroSection = () => {
     return (
@@ -22,7 +23,9 @@ const HeroSection = () => {
                     Sell tickets, promote events, <br /> engage sponsors, and discover
                     events.
                 </p>
+                <Link to="/event">
                 <Button variant="oval" text="Create Your Event!" />
+                </Link>
             </div>
         </div>
     );
