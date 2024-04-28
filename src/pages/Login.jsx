@@ -1,33 +1,67 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import Footer from "../components/UI/Footer";
 
-const Login = () => {
-    return (
-        <main>
-            <div className="flex">
-                {/* Login Section */}
-                <div className="flex flex-col items-start ml-80 mt-24"> {/* Added mt-8 for top margin */}
-                    <h1 className="text-white text-3xl font-titles mb-4">Log In</h1>
-                    <div className="w-80 border-2 border-[#e70ce3aa] px-4 py-3 mb-6">
-                        <input type="text" placeholder="Email Address" className="w-full bg-transparent text-white placeholder-white" />
-                    </div>
-                    <div className="w-80 border-2 border-[#e70ce3aa] rounded-md px-4 py-3 mb-6">
-                        <input type="password" placeholder="Password" className="w-full bg-transparent text-white placeholder-white" />
-                    </div>
-                    <div className="flex items-start mb-2">
-                        <p className="text-white text-sm mr-2">Forgot your password?</p>
-                    </div>
-                    <button className="w-80 bg-[#e70ce3aa] text-white px-4 py-2 rounded-md mb-4 transition duration-300 hover:bg-[#e70ce3aa]">Continue</button>
-                    <p className="text-white font-titles ml-32 mb-2">or</p>
-                    <a href="/register" className="text-white font-titles cursor-pointer hover:underline hover:text-secondary ml-28 mb-8">Register</a>
 
+const Login = () => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleLoginSuccess = (token) => {
+        // Store the token in local storage
+        localStorage.setItem('token', token);
+           
+            window.location.href = '/';
+        
+    };
+
+    const handleLogin = () => {
+        const requestData = {
+            email: email,
+            password: password
+        };
+
+        axios.post('https://localhost:7161/User/authenticate', requestData)
+            .then(response => {
+                const { token} = response.data;
+                handleLoginSuccess(token);
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    };
+
+    return (
+        <main className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col sm:flex-row">
+                {/* Login Section */}
+                <div className="flex flex-col items-center sm:items-start sm:ml-8 mt-8 sm:mt-24 w-full sm:w-1/2">
+                    <h1 className="text-white text-3xl font-titles mb-4">Log In</h1>
+                    <div className="w-full sm:w-80 border-2 border-[#e70ce3aa] px-4 py-3 mb-6">
+                        <input type="text" placeholder="Email Address" className="w-full bg-transparent text-white placeholder-white" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    </div>
+                    <div className="w-full sm:w-80 border-2 border-[#e70ce3aa] rounded-md px-4 py-3 mb-6">
+                        <input type="password" placeholder="Password" className="w-full bg-transparent text-white placeholder-white" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    </div>
+                    <div className="flex items-start justify-center mb-6">
+                        <button onClick={handleLogin} className="w-full sm:w-80 bg-[#e70ce3aa] text-white px-4 py-4 rounded-md mr-4 sm:mr-0 transition duration-300 hover:bg-gradient-to-br from-blue-600  to-fuchsia-600">Continue</button>
+                    </div>
+                    <div className="flex items-start justify-end mb-2 ml-36">
+                        <p className="text-white font-titles mb-2 mr-2">or</p>
+                    </div>
+                    <div className="flex items-center justify-center mb-8">
+                        <div className="w-80 border-2 border-[#e70ce3aa] px-4 py-3">
+                            <a href="/register" className="text-white font-titles cursor-pointer hover:underline hover:text-secondary">Register</a>
+                        </div>
+                    </div>
                 </div>
                 {/* Welcome Message Section */}
-                <div className="flex items-center justify-center w-1/2 relative"> {/* Added mt-8 for top margin */}
-                    <div className="absolute right-0 top-0 bottom-0 bg-purple-600 w-80"></div> {/* Purple rectangle */}
-                    <div className="z-10 text-white text-center p-8 w-80"> {/* Message text */}
-                        <h2 className="text-3xl font-titles mb-4">Welcome back to Eventopia</h2>
-                        <p className="text-lg">Let's have fun together!</p>
+                <div className="hidden sm:flex items-center justify-center w-full sm:w-1/2 relative mt-8">
+                    <div className="absolute right-0 top-0 bottom-0  bg-gradient-to-br from-blue-600  to-fuchsia-600 w-full flex items-center justify-center">
+                        <div className="z-10 text-white text-center p-8">
+                            <h2 className="text-3xl font-titles mb-4">Welcome back to Eventopia</h2>
+                            <p className="text-lg">Let's have fun together!</p>
+                        </div>
                     </div>
                 </div>
             </div>
