@@ -11,7 +11,7 @@ const EventSearchPage = () => {
     const handleSearch = async () => {
         setLoading(true);
         try {
-            const response = await axios.get(`http://localhost:5031/api/event/search?query=${query}`);
+            const response = await axios.get(`https://localhost:7161/api/Event/search?query=string`);
             if (!response.data || !Array.isArray(response.data)) {
                 throw new Error('Invalid response format');
             }
