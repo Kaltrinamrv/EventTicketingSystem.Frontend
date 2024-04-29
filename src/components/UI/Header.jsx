@@ -24,10 +24,10 @@ const Header = () => {
   const token = localStorage.getItem('token');
 
   const handleLogout = () => {
-    // Clear the token from local storage
+    
     localStorage.removeItem('token');
-    // Redirect the user to the login page or homepage
-    window.location.href = '/login'; // or '/' if you want to redirect to the homepage
+    
+    window.location.href = '/login'; 
   };
 
   return (
@@ -51,7 +51,7 @@ const Header = () => {
                 <a href={nav.link}>{nav.title}</a>
               </li>
             ))}
-            {/* Conditionally render Log Out if token exists, otherwise render Log In */}
+            
             {token ? (
               <li className="font-poppins font-normal px-2 py-2 cursor-pointer text-[20px] ml-4 text-white mr-10 hover:text-secondary hover:border-b-secondary hover:border-b-2">
                 <button onClick={handleLogout}>Log Out</button>
@@ -85,7 +85,7 @@ const Header = () => {
                     <a href={nav.link}>{nav.title}</a>
                   </li>
                 ))}
-                {/* Conditionally render Log Out if token exists, otherwise render Log In */}
+                
                 {token ? (
                   <li className="font-poppins font-medium cursor-pointer text-[20px] ml-4 text-white mb-4">
                     <button onClick={handleLogout}>Log Out</button>

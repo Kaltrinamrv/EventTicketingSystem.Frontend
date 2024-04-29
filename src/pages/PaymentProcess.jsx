@@ -27,11 +27,11 @@ const PaymentProcess = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            // Exclude email and cardnumber from paymentData
+           
             const { email, cardnumber, ...postData } = paymentData;
             const response = await axios.post('https://localhost:7161/api/Payment/process', postData);
             console.log('Payment created successfully:', response.data);
-            // Redirect or show success message
+            
         } catch (error) {
             console.error('Error creating payment:', error);
             setErrorMessage("Could not process your payment!");
