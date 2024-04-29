@@ -11,6 +11,7 @@ import Thankyou from './pages/Thankyou';
 import Event from './pages/Event';
 import Yourevent from './pages/Yourevent';
 
+
 function App() {
 
   const router = createBrowserRouter([
@@ -47,6 +48,11 @@ function App() {
     {
       path: "/Yourevent",
       element: <Yourevent />
+    },
+    {
+      path:"/PaymentProcess",
+      element: <PaymentProcess />
+
     },
     {
       path: "/create",
