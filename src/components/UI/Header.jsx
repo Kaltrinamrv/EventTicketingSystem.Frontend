@@ -5,17 +5,12 @@ export const navLinks = [
   {
     id: 'home',
     title: 'Discover Events',
-    link: '/',
+    link: '/Yourevent',
   },
   {
     id: 'create-events',
     title: 'Create Events',
     link: '/create',
-  },
-  {
-    id: 'about-us',
-    title: 'Account',
-    link: '/about',
   },
   {
     id: 'searchpage',
