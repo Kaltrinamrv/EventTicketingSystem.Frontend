@@ -12,6 +12,7 @@ import Event from './pages/Event';
 import PaymentProcess from './pages/PaymentProcess';
 import Yourevent from './pages/Yourevent';
 import Eventsuccess from './pages/Evensucces';
+import BuyTickets from './pages/BuyTicket';
 
 
 
@@ -47,6 +48,10 @@ function App() {
       path: "/Thankyou",
       element: <Thankyou />
 
+    },
+    {
+      path: "/BuyTicket/:eventId",
+      element: <BuyTickets />
     },
     {
       path:"/Eventsuccess",
