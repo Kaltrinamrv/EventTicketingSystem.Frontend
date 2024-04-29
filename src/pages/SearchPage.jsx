@@ -40,7 +40,7 @@ const EventSearchPage = () => {
     };
 
     return (
-        <main className="bg-black text-white min-h-screen">
+        <main className="text-white min-h-screen">
             <div className="max-w-3xl mx-auto px-4 py-8">
                 <h1 className="text-3xl font-bold mb-4">Event Search</h1>
                 <div className="flex items-center mb-4">
@@ -55,7 +55,7 @@ const EventSearchPage = () => {
                     <button
                         onClick={handleSearch}
                         disabled={!query || loading}
-                        className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                        className="bg-[#e70ce3aa] hover:bg-purple-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                     >
                         {loading ? 'Searching...' : 'Search'}
                     </button>
