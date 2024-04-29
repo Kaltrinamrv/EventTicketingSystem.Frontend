@@ -9,7 +9,10 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Thankyou from './pages/Thankyou';
 import Event from './pages/Event';
+import PaymentProcess from './pages/PaymentProcess';
 import Yourevent from './pages/Yourevent';
+import Eventsuccess from './pages/Evensucces';
+
 
 
 function App() {
@@ -46,9 +49,14 @@ function App() {
 
     },
     {
-      path: "/Yourevent",
-      element: <Yourevent />
+      path:"/Eventsuccess",
+      element: <Eventsuccess />
     },
+    {
+      path:"/Yourevent",
+      element:<Yourevent />
+    },
+  
     {
       path:"/PaymentProcess",
       element: <PaymentProcess />

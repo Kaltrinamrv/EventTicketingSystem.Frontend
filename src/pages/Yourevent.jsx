@@ -1,15 +1,21 @@
 import React from 'react';
 
 const Yourevent = ({ location }) => {
-  // Access eventData from location state
-  const eventData = location.state ? location.state.eventData : null;
+  // Parse URL parameters to get eventData
+  const urlParams = new URLSearchParams(location.search);
+  const eventData = {
+    Name: urlParams.get('name'),
+    Description: urlParams.get('description'),
+    Location: urlParams.get('location'),
+    Organizer: urlParams.get('organizer'),
+    TicketQuantity: urlParams.get('ticketQuantity'),
+    Price: urlParams.get('price'),
+    DateTime: urlParams.get('dateTime'),
+  };
 
-  if (!eventData) {
+  if (!eventData.Name || !eventData.Description || !eventData.Location || !eventData.Organizer || !eventData.TicketQuantity || !eventData.Price || !eventData.DateTime) {
     return <div>Error: Event data not found</div>; // Handle the case where eventData is not available
   }
-
-  const { Name, Description, Location, Organizer, TicketQuantity, Price, DateTime } = eventData;
-
   return (
     <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
       <div className="flex flex-col items-center mt-8 sm:mt-24">
