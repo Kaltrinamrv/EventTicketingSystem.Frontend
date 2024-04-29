@@ -41,7 +41,7 @@ const Event = () => {
         try {
             const response = await axios.post('https://localhost:7161/api/Event', eventData);
             console.log('Event created successfully:', response.data);
-            window.location.href = '/Create';
+            window.location.href = '/Eventsuccess';
         } catch (error) {
             console.error('Error creating event:', error);
             setErrorMessage("Could not create your event!");
